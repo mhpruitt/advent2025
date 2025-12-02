@@ -1,0 +1,106 @@
+{
+  "[python]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "always",
+      "source.organizeImports": "always"
+    }
+  },
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "string.quoted.docstring.multi.python",
+        "settings": {
+          "foreground": "#7F848E",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "variable.parameter.function-call.python",
+        "settings": {
+          "foreground": "#19ac56"
+        }
+      },
+      {
+        "scope": "keyword.operator.logical.python",
+        "settings": {
+          "foreground": "#ff74ff",
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.semanticTokenColorCustomizations": {
+    "enabled": true,
+    "rules": {
+      "class.typeHint:python": "#ebcb90",
+      "variable.typeHint:python": "#ebcb90",
+      "property:python": "#00c3d1",
+      "parameter:python": "#d66b6b",
+      "variable:python": {
+        "foreground": "#ABB2BF",
+        "italic": true
+      },
+      "variable.declaration:python": {
+        "foreground": "#aec0e2"
+      },
+      "*.builtin:python": {
+        "foreground": "#60d8d2",
+        "bold": true
+      },
+      "module:python": "#ffa600",
+      "builtinConstant:python": {
+        "foreground": "#e69762",
+        "bold": true
+      }
+    }
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.mypy_cache": true,
+    "**/__pycache__": true,
+    "**/dist": true,
+    "**/.venv": true,
+    "**/.pytest_cache": true,
+    "**/.qodo": true,
+    "**/.ruff_cache": true,
+    "**/.idea": true,
+    "**/cache.db": true,
+    "**/.hypothesis": true,
+    "**/.coverage": true,
+    "coverage.xml": true
+  },
+  "peacock.remoteColor": "#4d0000",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#800000",
+    "activityBar.background": "#800000",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#008000",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#800000",
+    "statusBar.background": "#4d0000",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#800000",
+    "statusBarItem.remoteBackground": "#4d0000",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#4d0000",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#4d000099",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "python.defaultInterpreterPath": "/home/mhpruitt/personal/advent-2025/.venv/bin"
+}

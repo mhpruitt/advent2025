@@ -1,0 +1,94 @@
+[project]
+name = "advent-2025"
+version = "0.1.0"
+description = "Advent of Code 2025"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "numpy>=2.3.5",
+    "pytest>=9.0.1",
+    "ruff>=0.14.7",
+    "typer>=0.15.1",
+]
+
+[tool.ruff]
+target-version = "py313"
+line-length = 120
+
+[tool.ruff.lint]
+ignore = [
+    "COM812",
+    "COM819",
+    "E111",
+    "E114",
+    "E117",
+    "E501",
+    "F401",
+    "D100",
+    "D203",
+    "D211",
+    "D212",
+    "D213",
+    "D300",
+    "D415",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+]
+select = [
+    "E",
+    "F",
+    "W",
+    "N",
+    "D",
+    "I",
+    "B",
+    "S",
+    "UP",
+    "EM",
+    "ICN",
+    "BLE",
+    "FBT",
+    "A",
+    "ICN",
+    "SIM",
+    "PTH",
+    "ERA",
+    "ANN",
+    "ASYNC",
+    "COM",
+    "C4",
+    "DTZ",
+    "LOG",
+    "G",
+    "INP",
+    "PIE",
+    "PT",
+    "Q",
+    "RET",
+    "ARG",
+    "TRY",
+    "FAST",
+    "PERF",
+    "FURB",
+    "RUF",
+]
+unfixable = ["B"]
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["INP001", "D100", "D103", "ANN", "S101", "S105"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
