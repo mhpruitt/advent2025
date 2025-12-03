@@ -1,6 +1,5 @@
 #!/usr/bin/env -S uv run --script
 import importlib.util
-import sys
 from pathlib import Path
 
 import typer
@@ -10,7 +9,7 @@ app = typer.Typer()
 
 @app.command(context_settings={'allow_extra_args': True, 'ignore_unknown_options': True})
 def main(
-    ctx: typer.Context,
+    _: typer.Context,
     day: int = typer.Argument(..., help='Day number'),
     part: int = typer.Argument(..., help='Part number'),
 ) -> None:
@@ -27,20 +26,23 @@ def main(
         raise typer.Exit(code=1)
 
     module = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = module
-
-    sys.argv = [str(day_file), f'--day={day:02d}', f'--part={part}']
-    if ctx.args:
-        sys.argv.extend(ctx.args)
-
     spec.loader.exec_module(module)
 
-    if hasattr(module, 'app'):
-        module.app()
-    else:
-        typer.echo(f'Error: {day_file} does not have an app() callable', err=True)
-        raise typer.Exit(code=1)
+    try:
+        data = typer.open_file(f'./inputs/day{day:02d}-{part}.txt').readlines()
 
+        if part == 1:
+            result = module.part1(data)
+            print(f'Day {day} Part 1 result: {result}')
+        elif part == 2:
+            result = module.part2(data)
+            print(f'Day {day} Part 2 result: {result}')
+        else:
+            typer.echo('Error: Must specify part 1 or part 2', err=True)
+
+    except Exception as e:
+        typer.echo(f'Error: {day_file} ended in error', err=True)
+        raise typer.Exit(code=1) from e
 
 if __name__ == '__main__':
     app()
