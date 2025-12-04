@@ -29,7 +29,7 @@ def main(
     spec.loader.exec_module(module)
 
     try:
-        data = typer.open_file(f'./inputs/day{day:02d}-{part}.txt').readlines()
+        data = typer.open_file(f'./inputs/day{day:02d}.txt').readlines()
 
         if part == 1:
             result = module.part1(data)
