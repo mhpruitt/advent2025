@@ -14,7 +14,7 @@ test_data_p1 = [
 ]
 
 @pytest.mark.parametrize(('values', 'invalid'), test_data_p1)
-def test_day01_part1(values, invalid):
+def test_day02_part1(values, invalid):
     assert part1(values) == sum(int(n) for n in invalid)
 
 
@@ -33,5 +33,5 @@ test_data_p2 = [
 ]
 
 @pytest.mark.parametrize(('values', 'invalid'), test_data_p2)
-def test_day01_part2(values, invalid):
+def test_day02_part2(values, invalid):
     assert part2(values) == sum(int(n) for n in invalid)
